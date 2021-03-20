@@ -2,20 +2,21 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import BottomNavigation from "@material-ui/core/BottomNavigation";
 import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
-import HomeIcon from "@material-ui/icons/Home";
-//import RestoreIcon from "@material-ui/icons/Restore";
-import FavoriteIcon from "@material-ui/icons/Favorite";
-import LocationOnIcon from "@material-ui/icons/LocationOn";
+import HomeRoundedIcon from "@material-ui/icons/HomeRounded";
 
 const useStyles = makeStyles({
   root: {
-    
-    width: "100%",
+    position: "absolute",
+    top: "auto",
+    bottom: 0,
+    left: 0,
+    right: 0,
+    magin: "auto",
   },
 });
 
 export default function SimpleBottomNavigation() {
-  const classes = useStyles();
+  const styles = useStyles();
   const [value, setValue] = React.useState(0);
 
   return (
@@ -25,11 +26,10 @@ export default function SimpleBottomNavigation() {
         setValue(newValue);
       }}
       showLabels
-      className={classes.root}
+      color="secondary"
+      className={styles.root}
     >
-      <BottomNavigationAction label="Home" icon={<HomeIcon />} />
-      <BottomNavigationAction label="Projects" icon={<FavoriteIcon />} />
-      <BottomNavigationAction label="Blog" icon={<LocationOnIcon />} />
+      <BottomNavigationAction label="Home" icon={<HomeRoundedIcon />} />
     </BottomNavigation>
   );
 }
