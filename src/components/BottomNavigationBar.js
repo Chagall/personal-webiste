@@ -9,13 +9,12 @@ const useStyles = makeStyles({
     position: "absolute",
     top: "auto",
     bottom: 0,
-    left: 0,
-    right: 0,
-    magin: "auto",
+    left: "24vw",
+    right: "24vw",
   },
 });
 
-export default function SimpleBottomNavigation() {
+export default function BottomNavigationBar() {
   const styles = useStyles();
   const [value, setValue] = React.useState(0);
 
