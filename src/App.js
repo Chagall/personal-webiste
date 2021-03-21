@@ -1,10 +1,8 @@
 import React from "react";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import red from "@material-ui/core/colors/red";
-import ButtonAppBar from "./components/ButtonsAppBar";
-import SimpleBottomNavigation from "./components/SimpleBottomNavigation";
-import LabeledLinearProgress from "./components/LabeledLinearProgress";
 import Container from "@material-ui/core/Container";
+import SimpleTabs from "./components/SimpleTabs";
 
 const customTheme = createMuiTheme({
   palette: {
@@ -21,10 +19,8 @@ function App() {
   return (
     <div className="App" style={appStyle}>
       <ThemeProvider theme={customTheme}>
-        <ButtonAppBar />
-        <Container maxWidth="sm">
-          <LabeledLinearProgress />
-          <SimpleBottomNavigation />
+        <Container style={containerStyle} maxWidth="md" disableGutters>
+          <SimpleTabs />
         </Container>
       </ThemeProvider>
     </div>
@@ -32,8 +28,13 @@ function App() {
 }
 
 const appStyle = {
-  height: "95vh",
-  backgroundColor: "#f5f5f5"
+  height: "98vh",
+  backgroundColor: "#f5f5f5",
+};
+
+const containerStyle = {
+  height: "98vh",
+  backgroundColor: "white",
 };
 
 export default App;
