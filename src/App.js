@@ -5,6 +5,16 @@ import cyan from "@material-ui/core/colors/cyan";
 import red from "@material-ui/core/colors/red";
 import MenuAppBar from "./components/MenuAppBar";
 
+function App() {
+  return (
+    <React.Fragment>
+      <ThemeProvider theme={customTheme}>
+        <MenuAppBar />
+      </ThemeProvider>
+    </React.Fragment>
+  );
+}
+
 const customTheme = createMuiTheme({
   palette: {
     primary: {
@@ -15,16 +25,6 @@ const customTheme = createMuiTheme({
     },
   },
 });
-
-function App() {
-  return (
-    <React.Fragment>
-      <ThemeProvider theme={customTheme}>
-        <MenuAppBar />
-      </ThemeProvider>
-    </React.Fragment>
-  );
-}
 
 /*
 
