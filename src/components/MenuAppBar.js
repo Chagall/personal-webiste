@@ -8,23 +8,6 @@ import PauseCircleFilledIcon from "@material-ui/icons/PauseCircleFilled";
 import Typography from "@material-ui/core/Typography";
 import Strings from "./utils/Strings";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    color: theme.palette,
-    marginTop: theme.spacing(-1),
-    marginLeft: theme.spacing(-1),
-    marginRight: theme.spacing(-1),
-  },
-  controls: {
-    display: "flex",
-    alignItems: "flex-start",
-    marginLeft: theme.spacing(-2),
-  },
-  title: {
-    flexGrow: 1,
-  },
-}));
-
 var musicUrl = "/music/rf_nt.mp3";
 var stream = new Audio(musicUrl);
 stream.preload = "none";
@@ -35,29 +18,26 @@ export default function MenuAppBar() {
   let [musicName, setMusicName] = useState(Strings.NOTHING);
 
   const handleClick = () => {
-    if(!isPlaying) {
+    if (!isPlaying) {
       playMusic();
       setPlaying(true);
       setMusicName(Strings.RF_NT);
-    }
-    else {
+    } else {
       pauseMusic();
       setPlaying(false);
       setMusicName(Strings.NOTHING);
     }
   };
 
-  const playMusic = () => {
-    stream.play();
-  };
+  const playMusic = () => stream.play();
 
   const pauseMusic = () => {
     stream.pause();
     stream.src = "";
     stream.load();
-    
+
     stream = null;
-    
+
     stream = new Audio();
     stream.src = musicUrl;
     stream.preload = "none";
@@ -65,12 +45,7 @@ export default function MenuAppBar() {
   };
 
   const currentButton = () => {
-    if(!isPlaying) {
-      return <PlayArrowIcon />;
-    }
-    else {
-      return <PauseCircleFilledIcon/>;
-    }
+    return !isPlaying ? <PlayArrowIcon /> : <PauseCircleFilledIcon />;
   };
 
   return (
@@ -94,3 +69,20 @@ export default function MenuAppBar() {
     </div>
   );
 }
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    color: theme.palette,
+    marginTop: theme.spacing(-1),
+    marginLeft: theme.spacing(-1),
+    marginRight: theme.spacing(-1),
+  },
+  controls: {
+    display: "flex",
+    alignItems: "flex-start",
+    marginLeft: theme.spacing(-2),
+  },
+  title: {
+    flexGrow: 1,
+  },
+}));
