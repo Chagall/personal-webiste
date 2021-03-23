@@ -1,40 +1,43 @@
 import React from "react";
+import "./css/App.css";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import cyan from "@material-ui/core/colors/cyan";
 import red from "@material-ui/core/colors/red";
-import Container from "@material-ui/core/Container";
-import SimpleTabs from "./components/SimpleTabs";
+import MenuAppBar from "./components/MenuAppBar";
 
 const customTheme = createMuiTheme({
   palette: {
     primary: {
-      main: red[900],
+      main: cyan[900],
     },
     secondary: {
-      main: "#ffc400",
+      main: red[200],
     },
   },
 });
 
 function App() {
   return (
-    <div className="App" style={appStyle}>
+    <React.Fragment>
       <ThemeProvider theme={customTheme}>
-        <Container style={containerStyle} maxWidth="md" disableGutters>
-          <SimpleTabs />
-        </Container>
+        <MenuAppBar />
       </ThemeProvider>
-    </div>
+    </React.Fragment>
   );
 }
 
-const appStyle = {
-  height: "98vh",
-  backgroundColor: "#f5f5f5",
-};
+/*
+
+import Container from "@material-ui/core/Container";
+import SimpleTabs from "./components/SimpleTabs";
+<Container style={containerStyle} maxWidth="md" disableGutters>
+<SimpleTabs />
+</Container>
 
 const containerStyle = {
   height: "98vh",
   backgroundColor: "white",
 };
+*/
 
 export default App;
