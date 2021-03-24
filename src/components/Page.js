@@ -1,30 +1,32 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
 import { makeStyles } from "@material-ui/core/styles";
+import MyInfo from "./MyInfo";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
   paper: {
     padding: theme.spacing(2),
     textAlign: "center",
     color: theme.palette.text.secondary,
   },
+  grid: {
+    marginTop: theme.spacing(4),
+    marginBottom: theme.spacing(4),
+    marginLeft: theme.spacing(2),
+    marginRight: theme.spacing(2),
+  },
 }));
 
 export default function Page() {
-  const classes = useStyles();
+  const styles = useStyles();
 
   return (
-    <div>
-      <Grid container direction="row" spacing={2}>
-        <Grid item xs={4}>
-          <Paper className={classes.paper}>xs=6</Paper>
+    <div className={styles.grid}>
+      <Grid container direction="row" spacing={2} wrap="wrap">
+        <Grid item xs={12} sm={3}>
+          <MyInfo />
         </Grid>
-        <Grid item xs={8}>
-          <Paper className={classes.paper}>xs=6</Paper>
+        <Grid item xs={12} sm={9}>
         </Grid>
       </Grid>
     </div>
