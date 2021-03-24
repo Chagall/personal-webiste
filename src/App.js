@@ -11,7 +11,7 @@ function App() {
     <React.Fragment>
       <ThemeProvider theme={customTheme}>
         <MenuAppBar />
-        <Page/>
+        <Page />
       </ThemeProvider>
     </React.Fragment>
   );
@@ -19,6 +19,7 @@ function App() {
 
 const customTheme = createMuiTheme({
   palette: {
+    type: "dark",
     primary: {
       main: cyan[900],
     },
