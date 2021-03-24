@@ -4,12 +4,14 @@ import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import cyan from "@material-ui/core/colors/cyan";
 import red from "@material-ui/core/colors/red";
 import MenuAppBar from "./components/MenuAppBar";
+import Page from "./components/Page";
 
 function App() {
   return (
     <React.Fragment>
       <ThemeProvider theme={customTheme}>
         <MenuAppBar />
+        <Page/>
       </ThemeProvider>
     </React.Fragment>
   );
