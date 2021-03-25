@@ -62,7 +62,7 @@ export default function MenuAppBar() {
             </IconButton>
           </div>
           <Typography variant="body1" className={styles.title}>
-            {Strings.LISTENING_TO} {musicName}
+            {Strings.NOW_PLAYING} {musicName}
           </Typography>
         </Toolbar>
       </AppBar>
