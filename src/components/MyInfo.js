@@ -8,20 +8,7 @@ import IconButton from "@material-ui/core/IconButton";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import TwitterIcon from "@material-ui/icons/Twitter";
-
 import Strings from "./utils/Strings";
-
-const useStyles = makeStyles({
-  root: {
-    paddingBottom: "-2vh",
-  },
-  media: {
-    height: 326,
-  },
-  socials: {
-    textAlign: "center",
-  },
-});
 
 export default function MyInfo() {
   const classes = useStyles();
@@ -30,7 +17,7 @@ export default function MyInfo() {
     <Card raised>
       <CardMedia
         className={classes.media}
-        image="/images/github.png"
+        image="/images/memyselfandyoda.jpg"
         title="Contemplative Reptile"
       />
       <CardContent className={classes.root}>
@@ -56,6 +43,7 @@ export default function MyInfo() {
 
         <div className={classes.socials}>
           <IconButton
+            color="primary"
             onClick={() => {
               window.location.href = "https://github.com/chagall";
             }}
@@ -64,6 +52,7 @@ export default function MyInfo() {
             <GitHubIcon />
           </IconButton>
           <IconButton
+            color="primary"
             onClick={() => {
               window.location.href =
                 "https://www.linkedin.com/in/fabio-alves-martins-pereira/";
@@ -73,6 +62,7 @@ export default function MyInfo() {
             <LinkedInIcon />
           </IconButton>
           <IconButton
+            color="primary"
             onClick={() => {
               window.location.href = "https://twitter.com/famprogrammer42";
             }}
@@ -85,3 +75,15 @@ export default function MyInfo() {
     </Card>
   );
 }
+
+const useStyles = makeStyles({
+  root: {
+    paddingBottom: "-2vh"
+  },
+  media: {
+    height: 326,
+  },
+  socials: {
+    textAlign: "center",
+  },
+});
