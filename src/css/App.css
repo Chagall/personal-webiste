@@ -1,4 +1,15 @@
 body {
-    background-color: red; /* For browsers that do not support gradients */
-    background-image: repeating-linear-gradient(45deg,#1565c0, #5e92f3);
+    background-color: red;
+    background-image: repeating-linear-gradient(45deg, #1565c0, #5e92f3);
+}
+
+code {
+    font-family: Consolas, "Courier New", Menlo, source-code-pro, Monaco, monospace;
+    color: #000000;
+    background: #e3f2fd;
+    padding: 2px;
+}
+
+a {
+    text-decoration: none !important;
 }
