@@ -11,41 +11,52 @@ import TwitterIcon from "@material-ui/icons/Twitter";
 import Strings from "./utils/Strings";
 
 export default function MyInfo() {
-  const classes = useStyles();
+  const styles = useStyles();
 
   return (
-    <Card raised>
+    <Card raised className={styles.root}>
       <CardMedia
-        className={classes.media}
+        className={styles.media}
         image="/images/memyselfandyoda.jpg"
         title="Contemplative Reptile"
       />
-      <CardContent className={classes.root}>
-        <Typography variant="h5" color="textPrimary" paragraph align="left">
+
+      <CardContent className={styles.content}>
+        <Typography variant="h4" color="textPrimary" paragraph align="left">
           {Strings.PRESENTATION}
+          <img
+            src="https://emoji.gg/assets/emoji/Mario.png"
+            width="22px"
+            height="22px"
+            alt="Mario"
+          />
         </Typography>
-        <Typography
-          variant="body1"
-          color="textSecondary"
-          paragraph
-          align="center"
-        >
-          {Strings.DESCRIPTION}
+        <Typography variant="body1" color="textSecondary" paragraph>
+          {Strings.I_AM_A}
+          <a href="https://www.linkedin.com/in/fabio-alves-martins-pereira/">
+            <code>{Strings.FRONT_ENGINEER}</code>
+          </a>
+          {Strings.WHO_ALSO_KNOWS}
+          <a href="https://github.com/Chagall/fake-servers">
+            <code>{Strings.BACKEND}</code>
+          </a>
+          {Strings.AND}
+          <a href="https://github.com/Chagall/notification-listener-service-example">
+            <code>{Strings.ANDROID_DEV}</code>
+          </a>
+          .
         </Typography>
-        <Typography
-          variant="body1"
-          color="textSecondary"
-          paragraph
-          align="center"
-        >
+        <Typography variant="body1" color="textSecondary" paragraph>
           {Strings.DESCRIPTION2}
+          <span style={textThrough}>shit</span> posting
+          {Strings.DESCRIPTION3}
         </Typography>
 
-        <div className={classes.socials}>
+        <div className={styles.socials}>
           <IconButton
             color="primary"
             onClick={() => {
-              window.location.href = "https://github.com/chagall";
+              window.open("https://github.com/chagall");
             }}
             aria-label="github"
           >
@@ -54,8 +65,9 @@ export default function MyInfo() {
           <IconButton
             color="primary"
             onClick={() => {
-              window.location.href =
-                "https://www.linkedin.com/in/fabio-alves-martins-pereira/";
+              window.open(
+                "https://www.linkedin.com/in/fabio-alves-martins-pereira/"
+              );
             }}
             aria-label="linkedin"
           >
@@ -64,7 +76,7 @@ export default function MyInfo() {
           <IconButton
             color="primary"
             onClick={() => {
-              window.location.href = "https://twitter.com/famprogrammer42";
+              window.open("https://twitter.com/famprogrammer42");
             }}
             aria-label="twitter"
           >
@@ -76,14 +88,28 @@ export default function MyInfo() {
   );
 }
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
-    paddingBottom: "-2vh"
+    height: 256,
+    display: "flex",
+  },
+  details: {
+    display: "flex",
+    flexDirection: "column",
+  },
+  content: {
+    flex: "1 0 auto",
   },
   media: {
-    height: 326,
+    width: 300,
+    height: 256,
   },
   socials: {
+    marginTop: theme.spacing(4),
     textAlign: "center",
   },
-});
+}));
+
+const textThrough = {
+  textDecoration: "line-through",
+};
