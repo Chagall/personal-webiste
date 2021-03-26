@@ -1,5 +1,4 @@
 import React from "react";
-import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import MyInfo from "./MyInfo";
 
@@ -8,20 +7,16 @@ export default function Page() {
 
   return (
     <div className={styles.grid}>
-      <Grid container direction="row" spacing={2} wrap="wrap">
-        <Grid item xs={12} sm={6} md={3}>
-          <MyInfo />
-        </Grid>
-        <Grid item xs={12} sm={6} md={9}></Grid>
-      </Grid>
+      <MyInfo />
     </div>
   );
 }
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles({
   grid: {
-    marginTop: theme.spacing(2),
-    marginLeft: theme.spacing(2),
-    marginRight: theme.spacing(2),
+    marginBottom: "12vh",
+    marginTop: "8vh",
+    marginLeft: "8vw",
+    marginRight: "8vw",
   },
-}));
+});

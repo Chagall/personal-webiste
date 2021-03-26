@@ -5,10 +5,11 @@ import blue from "@material-ui/core/colors/blue";
 import yellow from "@material-ui/core/colors/yellow";
 import Page from "./components/Page";
 import BottomAppBar from "./components/BottomAppBar";
+//import DeezerBar from "./components/DeezerBar";
 
 function App() {
   return (
-    <div style={{height: "99vh"}}>
+    <div style={{ height: "90vh" }}>
       <ThemeProvider theme={customTheme}>
         <Page />
         <BottomAppBar />
