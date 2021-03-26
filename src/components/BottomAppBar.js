@@ -91,8 +91,6 @@ const useStyles = makeStyles(() => ({
     position: "absolute",
     zIndex: 1,
     top: -70,
-    //left: 0,
-    right: 30,
-    //margin: "0 auto",
+    right: 30
   },
 }));
