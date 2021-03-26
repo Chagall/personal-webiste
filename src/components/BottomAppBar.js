@@ -76,7 +76,6 @@ export default function BottomAppBar() {
           >
             {currentButton()}
           </Fab>
-          <div className={classes.grow} />
         </Toolbar>
       </AppBar>
     </React.Fragment>
@@ -88,15 +87,12 @@ const useStyles = makeStyles(() => ({
     top: "auto",
     bottom: 0,
   },
-  grow: {
-    flexGrow: 1,
-  },
   fabButton: {
     position: "absolute",
     zIndex: 1,
-    top: -30,
-    left: 0,
-    right: 0,
-    margin: "0 auto",
+    top: -70,
+    //left: 0,
+    right: 30,
+    //margin: "0 auto",
   },
 }));
