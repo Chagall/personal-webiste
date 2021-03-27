@@ -28,7 +28,6 @@ export default function Page() {
 
   const setInfoBasedOnBrowserWidth = () => {
     let windowWidth = getBrowserWindowWidth();
-    console.log(windowWidth);
 
     if (currentWidth !== windowWidth) {
       setCurrentWidth(windowWidth);
@@ -52,7 +51,6 @@ export default function Page() {
     );
 
     return function cleanup() {
-      console.log("Limpou o danadinho");
       clearInterval(intervalID);
     };
   }, []);
