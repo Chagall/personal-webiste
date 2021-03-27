@@ -9,8 +9,9 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import Strings from "./utils/Strings";
+import Constants from "./utils/Constants";
 
-export default function MyInfo() {
+export default function HorizontalInfoCard() {
   const styles = useStyles();
 
   return (
@@ -18,35 +19,40 @@ export default function MyInfo() {
       <CardMedia
         className={styles.media}
         image="/images/memyselfandyoda.jpg"
-        title="Contemplative Reptile"
+        title="Mememe"
       />
 
-      <CardContent className={styles.content}>
-        <Typography variant="h4" color="textPrimary" paragraph align="left">
+      <CardContent>
+        <Typography variant="h4" color="textPrimary" align="left" paragraph>
           {Strings.PRESENTATION}
           <img
-            src="https://emoji.gg/assets/emoji/Mario.png"
+            src={Constants.MARIO_EMOJI_URL}
             width="22px"
             height="22px"
             alt="Mario"
           />
         </Typography>
-        <Typography variant="body1" color="textSecondary" paragraph>
+        <Typography variant="body1" color="textSecondary" align="left" paragraph>
           {Strings.I_AM_A}
-          <a href="https://www.linkedin.com/in/fabio-alves-martins-pereira/">
+          <a href={Constants.LINKEDIN_PAGE_URL}>
             <code>{Strings.FRONT_ENGINEER}</code>
           </a>
           {Strings.WHO_ALSO_KNOWS}
-          <a href="https://github.com/Chagall/fake-servers">
+          <a href={Constants.GITHUB_PAGE_URL + "fake-servers"}>
             <code>{Strings.BACKEND}</code>
           </a>
           {Strings.AND}
-          <a href="https://github.com/Chagall/notification-listener-service-example">
+          <a
+            href={
+              Constants.GITHUB_PAGE_URL +
+              "notification-listener-service-example"
+            }
+          >
             <code>{Strings.ANDROID_DEV}</code>
           </a>
           .
         </Typography>
-        <Typography variant="body1" color="textSecondary" paragraph>
+        <Typography variant="body1" color="textSecondary" align="left" paragraph>
           {Strings.DESCRIPTION2}
           <span style={textThrough}>shit</span> posting
           {Strings.DESCRIPTION3}
@@ -56,7 +62,7 @@ export default function MyInfo() {
           <IconButton
             color="primary"
             onClick={() => {
-              window.open("https://github.com/chagall");
+              window.open(Constants.GITHUB_PAGE_URL);
             }}
             aria-label="github"
           >
@@ -65,9 +71,7 @@ export default function MyInfo() {
           <IconButton
             color="primary"
             onClick={() => {
-              window.open(
-                "https://www.linkedin.com/in/fabio-alves-martins-pereira/"
-              );
+              window.open(Constants.LINKEDIN_PAGE_URL);
             }}
             aria-label="linkedin"
           >
@@ -76,7 +80,7 @@ export default function MyInfo() {
           <IconButton
             color="primary"
             onClick={() => {
-              window.open("https://twitter.com/famprogrammer42");
+              window.open(Constants.TWITTER_PAGE_URL);
             }}
             aria-label="twitter"
           >
@@ -97,15 +101,12 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
   },
-  content: {
-    flex: "1 0 auto",
-  },
   media: {
     width: 300,
     height: 256,
   },
   socials: {
-    marginTop: theme.spacing(4),
+    marginTop: theme.spacing(3),
     textAlign: "center",
   },
 }));
