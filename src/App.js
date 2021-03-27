@@ -9,9 +9,9 @@ import BottomAppBar from "./components/BottomAppBar";
 
 function App() {
   return (
-    <div>
+    <div style={containerStyle}>
       <ThemeProvider theme={customTheme}>
-        <Container style={containerStyle}>
+        <Container >
           <Page />
           <BottomAppBar />
         </Container>
@@ -33,8 +33,7 @@ const customTheme = createMuiTheme({
 });
 
 const containerStyle = {
-  paddingTop: "4vh",
-  height: "99vh",
+  paddingTop: "4vh"
 };
 
 export default App;
