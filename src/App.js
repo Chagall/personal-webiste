@@ -1,18 +1,20 @@
 import React from "react";
 import "./css/App.css";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import Container from "@material-ui/core/Container";
 import blue from "@material-ui/core/colors/blue";
 import yellow from "@material-ui/core/colors/yellow";
 import Page from "./components/Page";
 import BottomAppBar from "./components/BottomAppBar";
-//import DeezerBar from "./components/DeezerBar";
 
 function App() {
   return (
-    <div style={{ height: "90vh" }}>
+    <div>
       <ThemeProvider theme={customTheme}>
-        <Page />
-        <BottomAppBar />
+        <Container style={containerStyle}>
+          <Page />
+          <BottomAppBar />
+        </Container>
       </ThemeProvider>
     </div>
   );
@@ -29,5 +31,10 @@ const customTheme = createMuiTheme({
     },
   },
 });
+
+const containerStyle = {
+  paddingTop: "4vh",
+  height: "99vh",
+};
 
 export default App;
