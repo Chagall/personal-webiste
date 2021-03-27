@@ -8,6 +8,7 @@ import Fab from "@material-ui/core/Fab";
 import Strings from "./utils/Strings";
 import PlayArrowIcon from "@material-ui/icons/PlayArrow";
 import PauseIcon from "@material-ui/icons/Pause";
+import SkipNextIcon from "@material-ui/icons/SkipNext";
 
 let musicList = [
   "8_Bit_Retro_Funk_-_David_Renda.mp3",
@@ -24,34 +25,45 @@ export default function BottomAppBar() {
   const classes = useStyles();
   let [isPlaying, setPlaying] = useState(false);
   let [musicName, setMusicName] = useState(Strings.NOTHING);
+  let [currentMusicNum, setCurrentMusicNum] = useState(0);
 
-  const handleClick = () => {
+  const handlePlayClick = () => {
     !isPlaying ? playMusic() : pauseMusic();
+  };
+
+  const handleSkipNextClick = () => {
+    pauseMusic();
+    playNextMusic();
   };
 
   const playMusic = () => {
     let randomMusicNumber = Math.floor(
       Math.random() * (musicList.length - 0) + 0
     );
-    let music = musicList[randomMusicNumber];
-    stream = new Audio(`/music/${music}`);
+    setCurrentMusicNum(randomMusicNumber);
+    stream = new Audio(`/music/${musicList[randomMusicNumber]}`);
     stream.play();
-
     setPlaying(true);
-    setMusicName(music);
+    setMusicName(musicList[randomMusicNumber]);
+  };
+
+  const playNextMusic = () => {
+    // Play the music that is pointed by currentMusicNum
+    stream = new Audio(`/music/${musicList[currentMusicNum]}`);
+    stream.play();
+    setPlaying(true);
+    setMusicName(musicList[currentMusicNum]);
+
+    // And after that set the currentMusicNum to the next value
+    if (currentMusicNum + 1 < musicList.length) {
+      setCurrentMusicNum(currentMusicNum + 1);
+    } else {
+      setCurrentMusicNum(0);
+    }
   };
 
   const pauseMusic = () => {
     stream.pause();
-    stream.src = "";
-    stream.load();
-
-    stream = null;
-
-    stream = new Audio();
-    stream.preload = "none";
-    stream.pause();
-
     setPlaying(false);
     setMusicName(Strings.NOTHING);
   };
@@ -70,11 +82,20 @@ export default function BottomAppBar() {
           </Typography>
           <Fab
             color="secondary"
-            aria-label="add"
-            className={classes.fabButton}
-            onClick={handleClick}
+            aria-label="play"
+            className={classes.playFabButton}
+            onClick={handlePlayClick}
           >
             {currentButton()}
+          </Fab>
+          <Fab
+            color="secondary"
+            size="small"
+            aria-label="skip-next"
+            className={classes.nextFabButton}
+            onClick={handleSkipNextClick}
+          >
+            <SkipNextIcon />
           </Fab>
         </Toolbar>
       </AppBar>
@@ -87,10 +108,16 @@ const useStyles = makeStyles(() => ({
     top: "auto",
     bottom: 0,
   },
-  fabButton: {
+  playFabButton: {
     position: "absolute",
     zIndex: 1,
     top: -70,
-    right: 30
+    right: 60,
+  },
+  nextFabButton: {
+    position: "absolute",
+    zIndex: 1,
+    top: -61,
+    right: 12,
   },
 }));
