@@ -76,8 +76,8 @@ export default function BottomAppBar() {
     <React.Fragment>
       <CssBaseline />
       <AppBar position="fixed" color="primary" className={classes.appBar}>
-        <Toolbar>
-          <Typography variant="button">
+        <Toolbar variant="dense">
+          <Typography variant="body2">
             {`${Strings.NOW_PLAYING} ${musicName}`}
           </Typography>
           <Fab
