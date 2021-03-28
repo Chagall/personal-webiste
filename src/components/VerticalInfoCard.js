@@ -92,9 +92,9 @@ export default function VerticalInfoCard() {
   );
 }
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   root: {
-    marginBottom: "12vh"
+    marginBottom: theme.spacing(4)
   },
   media: {
     height: 400,
