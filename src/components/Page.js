@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import HorizontalInfoCard from "./HorizontalInfoCard";
 import VerticalInfoCard from "./VerticalInfoCard";
+import StoryAccordion from "./StoryAccordion";
 
 export default function Page() {
-
   const getBrowserWindowWidth = () => {
     var windowWidth = 0;
     if (typeof window.innerWidth == "number") {
@@ -40,7 +40,13 @@ export default function Page() {
   };
 
   const [currentWidth, setCurrentWidth] = useState(-1);
-  const [info, setInfo] = useState(<HorizontalInfoCard />);
+  let firstRenderInfoCard =
+    getBrowserWindowWidth() < 750 ? (
+      <VerticalInfoCard />
+    ) : (
+      <HorizontalInfoCard />
+    );
+  const [info, setInfo] = useState(firstRenderInfoCard);
   const [intervalID, setIntervalID] = useState(-1);
 
   useEffect(() => {
@@ -55,12 +61,15 @@ export default function Page() {
     };
   }, []);
 
-  return <div style={smallScreen}>{info}</div>;
+  return (
+    <div style={containerStyle}>
+      {info}
+      <StoryAccordion />
+    </div>
+  );
 }
 
-
-
-const smallScreen = {
-  textAlign: "center",
-  margin: "0 auto",
+const containerStyle = {
+  paddingTop: "4vh",
+  paddingBottom: "12vh",
 };
