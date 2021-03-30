@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import HorizontalInfoCard from "./HorizontalInfoCard";
 import VerticalInfoCard from "./VerticalInfoCard";
 import StoryAccordion from "./StoryAccordion";
+import Projects from "./Projects";
 
 export default function Page() {
   const getBrowserWindowWidth = () => {
@@ -65,6 +66,7 @@ export default function Page() {
     <div style={containerStyle}>
       {info}
       <StoryAccordion />
+      <Projects />
     </div>
   );
 }
