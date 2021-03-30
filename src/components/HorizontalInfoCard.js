@@ -32,7 +32,12 @@ export default function HorizontalInfoCard() {
             alt="Mario"
           />
         </Typography>
-        <Typography variant="body1" color="textSecondary" align="left" paragraph>
+        <Typography
+          variant="body1"
+          color="textSecondary"
+          align="left"
+          paragraph
+        >
           {Strings.I_AM_A}
           <a href={Constants.LINKEDIN_PAGE_URL}>
             <code>{Strings.FRONT_ENGINEER}</code>
@@ -52,10 +57,14 @@ export default function HorizontalInfoCard() {
           </a>
           .
         </Typography>
-        <Typography variant="body1" color="textSecondary" align="left" paragraph>
-          {Strings.DESCRIPTION2}
-          <span style={textThrough}>shit</span> posting
-          {Strings.DESCRIPTION3}
+        <Typography
+          variant="body1"
+          color="textSecondary"
+          align="left"
+          paragraph
+        >
+          You can catch me doing stuff on one or more of the social medias
+          below:
         </Typography>
 
         <div className={styles.socials}>
@@ -96,7 +105,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     height: 256,
     display: "flex",
-    marginBottom: theme.spacing(4)
+    marginBottom: theme.spacing(4),
   },
   details: {
     display: "flex",
@@ -111,7 +120,3 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
   },
 }));
-
-const textThrough = {
-  textDecoration: "line-through",
-};
