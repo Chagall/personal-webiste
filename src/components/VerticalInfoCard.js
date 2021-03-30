@@ -32,7 +32,12 @@ export default function VerticalInfoCard() {
             alt="Mario"
           />
         </Typography>
-        <Typography variant="body1" color="textSecondary" align="center" paragraph>
+        <Typography
+          variant="body1"
+          color="textSecondary"
+          align="center"
+          paragraph
+        >
           {Strings.I_AM_A}
           <a href={Constants.LINKEDIN_PAGE_URL}>
             <code>{Strings.FRONT_ENGINEER}</code>
@@ -52,10 +57,9 @@ export default function VerticalInfoCard() {
           </a>
           .
         </Typography>
-        <Typography variant="body1" color="textSecondary" align="center" paragraph>
-          {Strings.DESCRIPTION2}
-          <span style={textThrough}>shit</span> posting
-          {Strings.DESCRIPTION3}
+        <Typography variant="body1" color="textSecondary" align="center">
+          You can catch me doing stuff on one or more of the social medias
+          below:
         </Typography>
 
         <div className={styles.socials}>
@@ -94,16 +98,12 @@ export default function VerticalInfoCard() {
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    marginBottom: theme.spacing(4)
+    marginBottom: theme.spacing(4),
   },
   media: {
-    height: 400,
+    height: 256,
   },
   socials: {
     textAlign: "center",
   },
 }));
-
-const textThrough = {
-  textDecoration: "line-through",
-};
