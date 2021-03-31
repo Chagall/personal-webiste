@@ -23,5 +23,7 @@ const useStyles = makeStyles((theme) => ({
   },
   image: {
     height: 20,
+    display: "block",
+    margin: "auto",
   },
 }));
