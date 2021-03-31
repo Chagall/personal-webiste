@@ -47,7 +47,7 @@ export default function Projects() {
               <Grid item xs={12} sm={12} md={6} lg={4}>
                 <ProjectCard
                   title="Intercept Android notifications"
-                  imgSrc="https://i.stack.imgur.com/A0Y3K.jpg"
+                  imgSrc="./images/notification.jpg"
                   description="An Android app. example to help people understand how you can
                   intercept incoming notifications on Android."
                   githubPage="notification-listener-service-example"
@@ -56,7 +56,7 @@ export default function Projects() {
               <Grid item xs={12} sm={12} md={6} lg={4}>
                 <ProjectCard
                   title="@react-pdf Table Example"
-                  imgSrc="https://i.imgur.com/e5KZFz0.png"
+                  imgSrc="./images/react-pdf.png"
                   description="An example of how you can use <View>, <Text> and CSS to build a table inside @react-pdf (Since it's not implemented 💁)."
                   githubPage="notification-listener-service-example"
                 />
@@ -64,7 +64,7 @@ export default function Projects() {
               <Grid item xs={12} sm={12} md={6} lg={4}>
                 <ProjectCard
                   title="This website 🤖"
-                  imgSrc="https://i.imgur.com/kcVarox.jpg"
+                  imgSrc="./logo512.png"
                   description="This website itself is a personal project I'm building in React.js. My aim is to do it using only functions and react hooks instead of class components."
                   githubPage="personal-webiste"
                 />
