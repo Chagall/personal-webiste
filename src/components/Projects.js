@@ -30,7 +30,7 @@ export default function Projects() {
           id="panel1a-header"
         >
           <Typography variant="h5" color="textPrimary" align="left">
-            My Personal Projects
+            Some personal projects
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
