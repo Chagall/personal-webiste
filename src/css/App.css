@@ -1,15 +1,26 @@
 body {
-    background-color: red;
-    background-image: repeating-linear-gradient(45deg, #1565c0, #5e92f3);
+  background-color: red;
+  background-image: repeating-linear-gradient(45deg, #1565c0, #5e92f3);
 }
 
 code {
-    font-family: Consolas, "Courier New", Menlo, source-code-pro, Monaco, monospace;
-    color: #000000;
-    background: #e3f2fd;
-    padding: 2px;
+  font-family: Consolas, "Courier New", Menlo, source-code-pro, Monaco, monospace;
+  color: #000000;
+  background: #e3f2fd;
+  padding: 2px;
 }
 
 a {
-    text-decoration: none !important;
+  text-decoration: none !important;
+}
+
+@font-face {
+  font-family: "Neon";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/NEON____.TTF");
+}
+
+.neon-text {
+  font-family: "Neon" !important;
 }
