@@ -48,17 +48,14 @@ export default function Homepage() {
       <HorizontalInfoCard />
     );
   const [info, setInfo] = useState(firstRenderInfoCard);
-  const [intervalID, setIntervalID] = useState(-1);
 
   useEffect(() => {
-    setIntervalID(
-      setInterval(() => {
-        setInfoBasedOnBrowserWidth();
-      }, 1000)
-    );
+    document.getElementsByTagName("BODY")[0].onresize = () => {
+      setInfoBasedOnBrowserWidth();
+    };
 
     return function cleanup() {
-      clearInterval(intervalID);
+      // For now, nothing here
     };
   }, []);
 
