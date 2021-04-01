@@ -4,7 +4,7 @@ import VerticalInfoCard from "./VerticalInfoCard";
 import StoryAccordion from "./StoryAccordion";
 import Projects from "./Projects";
 
-export default function Page() {
+export default function Homepage() {
   const getBrowserWindowWidth = () => {
     var windowWidth = 0;
     if (typeof window.innerWidth == "number") {
@@ -48,17 +48,14 @@ export default function Page() {
       <HorizontalInfoCard />
     );
   const [info, setInfo] = useState(firstRenderInfoCard);
-  const [intervalID, setIntervalID] = useState(-1);
 
   useEffect(() => {
-    setIntervalID(
-      setInterval(() => {
-        setInfoBasedOnBrowserWidth();
-      }, 1000)
-    );
+    document.getElementsByTagName("BODY")[0].onresize = () => {
+      setInfoBasedOnBrowserWidth();
+    };
 
     return function cleanup() {
-      clearInterval(intervalID);
+      // For now, nothing here
     };
   }, []);
 
