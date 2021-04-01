@@ -9,7 +9,7 @@ import HomeIcon from "@material-ui/icons/Home";
 import PersonPinIcon from "@material-ui/icons/PersonPin";
 import LocalLibraryIcon from "@material-ui/icons/LocalLibrary";
 import AccountTreeIcon from "@material-ui/icons/AccountTree";
-import MediaControlCard from "./MediaControlCard";
+import MediaControlCard from "../MediaControlCard";
 import AppBar from "@material-ui/core/AppBar";
 
 function TabPanel(props) {

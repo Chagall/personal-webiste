@@ -4,7 +4,7 @@ import VerticalInfoCard from "./VerticalInfoCard";
 import StoryAccordion from "./StoryAccordion";
 import Projects from "./Projects";
 
-export default function Page() {
+export default function Homepage() {
   const getBrowserWindowWidth = () => {
     var windowWidth = 0;
     if (typeof window.innerWidth == "number") {

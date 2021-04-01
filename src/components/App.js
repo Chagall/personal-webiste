@@ -1,12 +1,12 @@
 import React from "react";
-import "./css/App.css";
+import "../css/App.css";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import blue from "@material-ui/core/colors/blue";
 import yellow from "@material-ui/core/colors/yellow";
-import Page from "./components/Page";
-import BottomAppBar from "./components/BottomAppBar";
-import MenuAppBar from "./components/MenuAppBar";
+import Homepage from "./Homepage";
+import BottomAppBar from "./menus/BottomAppBar";
+import MenuAppBar from "./menus/MenuAppBar";
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
       <ThemeProvider theme={customTheme}>
         <MenuAppBar />
         <Container>
-          <Page />
+          <Homepage />
           <BottomAppBar />
         </Container>
       </ThemeProvider>
