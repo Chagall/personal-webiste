@@ -23,14 +23,8 @@ export default function HorizontalInfoCard() {
       />
 
       <CardContent>
-        <Typography variant="h4" color="textPrimary" align="left" paragraph>
+        <Typography className="neon-text" variant="h4" color="primary" align="left" paragraph>
           {Strings.PRESENTATION}
-          <img
-            src={Constants.MARIO_EMOJI_URL}
-            width="22px"
-            height="22px"
-            alt="Mario"
-          />
         </Typography>
         <Typography
           variant="body1"
