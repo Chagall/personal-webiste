@@ -23,8 +23,24 @@ export default function HorizontalInfoCard() {
       />
 
       <CardContent>
-        <Typography className="neon-text" variant="h4" color="primary" align="left" paragraph>
-          {Strings.PRESENTATION}
+        <Typography
+          className="neon-text"
+          variant="h4"
+          color="primary"
+          align="left"
+          paragraph
+        >
+          {Strings.NAME}
+        </Typography>
+
+        <Typography
+          variant="body1"
+          color="textSecondary"
+          align="left"
+          paragraph
+        >
+          {Strings.SUP_YALL}{" "}
+          <span className="neon-text">{Strings.SITE_NAME}</span>
         </Typography>
         <Typography
           variant="body1"
