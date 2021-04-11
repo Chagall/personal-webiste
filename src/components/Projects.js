@@ -46,6 +46,15 @@ export default function Projects() {
             <Grid container className={classes.root} spacing={4}>
               <Grid item xs={12} sm={12} md={6} lg={4}>
                 <ProjectCard
+                  title="Rickyfy"
+                  imgSrc="./images/ricky.jpg"
+                  description="Gereate random quotes from Ricky LaFleur, a character from the TV series Trailer Park Boys. These quotes are popularly knows as Rickyisms."
+                  githubPage="rickyfy"
+                  website="https://rickyfy.netlify.app/"
+                />
+              </Grid>
+              <Grid item xs={12} sm={12} md={6} lg={4}>
+                <ProjectCard
                   title="Intercept Android notifications"
                   imgSrc="./images/notification.jpg"
                   description="An Android app. example to help people understand how you can
