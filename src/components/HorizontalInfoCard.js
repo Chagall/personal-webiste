@@ -18,7 +18,7 @@ export default function HorizontalInfoCard() {
     <Card raised className={styles.root}>
       <CardMedia
         className={styles.media}
-        image="/images/memyselfandyoda.jpg"
+        image="/images/profile-pic.png"
         title="Mememe"
       />
 
